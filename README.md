@@ -8,7 +8,7 @@ A small speaker is employed for audio, a color LCD for video, and a HC-06 for th
 ![Blackbox Diagram](diagrams/blackbox/blackbox_v2.png "Blackbox Diagram")
 
 
-![Design Reference](image/inspo_arcade.jpg "Design Reference")
+![Design Reference](images/inspo_arcade.jpg "Design Reference")
 [^1]
 
 ## Part List
