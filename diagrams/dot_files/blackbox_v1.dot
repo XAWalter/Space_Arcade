@@ -1,0 +1,18 @@
+digraph blackbox_v1 {
+	splines = ortho;
+	rankdir = LR;
+
+
+	node [shape = box, label = "MCU"] mcu;
+	node [shape = plaintext, label = "Wireless Adapter"] wireless_adapter;
+	node [shape = plaintext, label = "Display"] video;
+	node [shape = plaintext, label = "Speaker"] audio;
+	node [shape = box, label = "Phone Application"] app;
+	
+
+	mcu -> {audio, video};
+	wireless_adapter -> mcu;
+	app -> wireless_adapter;
+
+}
+
