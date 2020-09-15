@@ -1,0 +1,18 @@
+digraph blackbox_v1 {
+	splines = ortho;
+	rankdir = LR;
+
+
+	node [shape = box, label = "Atmega 1284p"] mcu;
+	node [shape = plaintext, label = "HC-06"] wireless_adapter;
+	node [shape = plaintext, label = "ILI9341 SPI TFT LCD"] video;
+	node [shape = plaintext, label = "1W 8Ohm Round Internal Magnet speaker"] audio;
+	node [shape = box, label = "Phone Application"] app;
+	
+
+	mcu -> {audio, video};
+	wireless_adapter -> mcu;
+	app -> wireless_adapter;
+
+}
+
