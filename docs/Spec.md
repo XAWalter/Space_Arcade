@@ -1,4 +1,4 @@
-# Introduction
+## Introduction
 
 ### System Purpose
 
@@ -17,6 +17,8 @@ MCU - Microcontroller Unit\
 PLA - Plastic used for printing chassis(Polylactic acid)\
 FDM - 3D printing Process (Fused Filament Fabrication)\
 
+## General System Description
+
 ### System Overview
 
 The projected subsystems of this project include the audio, video, wireless connection, app, game logic, and 3D design.
@@ -32,7 +34,6 @@ A small speaker is employed for audio, a color LCD for video, and a HC-06 for th
 | Display | An LCD that displays the different frames of the game when the arcade is switched on | Allows user to interact with the game |
 | Audio | A Speaker that plays sound cues and music when the arcade is switched on | Creates a more immersive experience |
 
-## General System Description
 
 ### System Context
 
