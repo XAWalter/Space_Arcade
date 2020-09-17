@@ -9,7 +9,8 @@ A small speaker is employed for audio, a color LCD for video, and a HC-06 for th
 
 ![Design Reference](./images/inspo_arcade_resized.jpg)
 
-[Image Refrence](https://www.amazon.com/My-Arcade-Micro-Player-Machine/dp/B0897SHB6P/ref=sr_1_10?dchild=1&keywords=mini+arcade&qid=1600134827&sr=8-10)
+[Image Reference](https://www.amazon.com/My-Arcade-Micro-Player-Machine/dp/B0897SHB6P/ref=sr_1_10?dchild=1&keywords=mini+arcade&qid=1600134827&sr=8-10)
+
 
 ## Part List
 
