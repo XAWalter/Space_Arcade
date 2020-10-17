@@ -13,7 +13,7 @@ Bluetooth - wireless standard used for data exchange
 
 #### Acronyms and Abbreviations
 
-MCU - Microcontroller Unit\
+FPGA - Field Programmable Gate Array\
 PLA - Plastic used for printing chassis(Polylactic acid)\
 FDM - 3D printing Process (Fused Filament Fabrication)\
 
@@ -25,7 +25,7 @@ The projected subsystems of this project include the audio, video, wireless conn
 
 ![Blackbox Design](../diagrams/blackbox/blackbox_v2.png)
 
-A small speaker is employed for audio, a color LCD for video, and a HC-06 for the interface between the phone app and the MCU through bluetooth. The chassis is designed utilizing openSCad and is  printed from a FDM printer, specifically the Ender 3 pro, using black eSun PLA+. The game logic is based off of the 1978 arcade game Space invaders.
+A small speaker is employed for audio, a color LCD for video, and a PMOD Bluetooth module for the interface between the phone app and the FPGA through bluetooth. The chassis is designed utilizing openSCad and is  printed from a FDM printer, specifically the Ender 3 pro, using black eSun PLA+. The game logic is based off of the 1978 arcade game Space invaders.
 
 #### External Inputs and Outputs
 | Name | Description | Use |
