@@ -1,19 +1,18 @@
 module audio_note
 	(
-		input wire i_clk,
+		input wire i_clk, i_enable,
+		input wire [15:0] i_freq,
 		output wire o_pulse
 	);
 
-	// Assignments
-	assign o_pulse = r_pulse;
-	
+
 	// States
 	parameter LOW = 1'b0;
 	parameter HIGH = 1'b1;
 
 	// Divider
-	parameter DIV = 15000;
-	
+	parameter CLK_FREQ = 12000000;
+	wire [15:0] div;
 	
 	// Regs
 	reg r_pulse;
@@ -21,6 +20,11 @@ module audio_note
 	
 	// counter
 	integer i = 0;
+
+	// Assignments
+	assign o_pulse = i_enable ? r_pulse : 0;
+	assign div = CLK_FREQ / (i_freq * 2);
+
 	
 	
 		always @(posedge i_clk) begin
@@ -28,7 +32,7 @@ module audio_note
 			// Transitions
 			case (c_state)
 				LOW: begin
-					if ( i < DIV ) begin
+					if ( i < div ) begin
 						i <= i + 1;
 						c_state <= LOW;
 					end
@@ -40,7 +44,7 @@ module audio_note
 				end
 		
 				HIGH: begin
-					if ( i < DIV ) begin
+					if ( i < div ) begin
 						i <= i + 1;
 						c_state <= HIGH;
 					end
@@ -66,6 +70,3 @@ module audio_note
 		end
 	
 endmodule
-		
-
-
