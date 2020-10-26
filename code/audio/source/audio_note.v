@@ -1,7 +1,7 @@
 module audio_note
 	(
-		input wire i_clk, i_enable,
-		input wire [15:0] i_freq,
+		input wire i_clk,
+		input wire [23:0] i_freq,
 		output wire o_pulse
 	);
 
@@ -12,7 +12,7 @@ module audio_note
 
 	// Divider
 	parameter CLK_FREQ = 12000000;
-	wire [15:0] div;
+	wire [23:0] div;
 	
 	// Regs
 	reg r_pulse;
@@ -22,7 +22,7 @@ module audio_note
 	integer i = 0;
 
 	// Assignments
-	assign o_pulse = i_enable ? r_pulse : 0;
+	assign o_pulse = ( i_freq > 0 ) ? r_pulse : 0;
 	assign div = CLK_FREQ / (i_freq * 2);
 
 	
