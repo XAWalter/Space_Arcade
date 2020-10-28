@@ -37,7 +37,7 @@ module audio_note
 						c_state <= LOW;
 					end
 					else begin
-						$display("%b", c_state);
+						//$display("%b", c_state);
 						i <= 0;
 						c_state <= HIGH;
 					end
@@ -49,7 +49,7 @@ module audio_note
 						c_state <= HIGH;
 					end
 					else begin
-						$display("%b", c_state);
+						//$display("%b", c_state);
 						i <= 0;
 						c_state <= LOW;
 					end

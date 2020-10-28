@@ -7,14 +7,18 @@ module audio_tb;
 	wire pulse;
 
 
-	audio_note an01(
+	music m02(
 		.i_clk(clk),
-		.i_freq(freq),
 		.o_pulse(pulse)
 	);
 
+	//clk_divider cd03(
+	//	.i_clk(clk),
+	//	.i_freq(50),
+	//	.o_clk(pulse)
+	//);
+
 	initial begin
-		freq = 500;
 		clk = 0; #50;
 		forever begin
 			clk = ~clk; #50;
