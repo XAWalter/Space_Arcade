@@ -1,4 +1,4 @@
-module uart_rx #(parameter CLK_FREQ = 12000000, parameter BAUD = 9600, parameter NUM_BITS = 8)
+module uart_rx #(parameter CLK_FREQ = 12000000, parameter BAUD = 115200, parameter NUM_BITS = 8)
 	(
 	input i_clk,
 	input i_data,
@@ -7,9 +7,7 @@ module uart_rx #(parameter CLK_FREQ = 12000000, parameter BAUD = 9600, parameter
 	);
 
 	// Number of Ticks for a period given BAUDRATE
-	parameter CLKS_PER_PERIOD = (CLK_FREQ / BAUD) - 1;
-
-	// BITS PER TRANSFER
+	parameter CLKS_PER_PERIOD = CLK_FREQ / BAUD;
 
 	// STATES	
 	parameter WAIT = 3'b000;
@@ -29,7 +27,7 @@ module uart_rx #(parameter CLK_FREQ = 12000000, parameter BAUD = 9600, parameter
 
 	// Assignments
 	assign o_done = r_done;
-	assign o_data = ( o_done == 1 ) ? r_data : 0;
+	assign o_data = r_data;
 
 	always @( posedge i_clk ) begin
 
@@ -137,8 +135,6 @@ module uart_rx #(parameter CLK_FREQ = 12000000, parameter BAUD = 9600, parameter
 			end
 
 			RESET: begin
-				r_data = 0;
-				r_done = 0;
 				count = 0;
 				bit = 0;
 			end
